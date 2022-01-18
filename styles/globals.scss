@@ -1,0 +1,54 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans+Condensed:wght@300&family=Oswald:wght@200;400;700&family=Source+Sans+Pro:wght@300;400;700&display=swap");
+
+:root {
+  --primary: 239, 195, 15;
+  --dark: 34, 34, 34;
+  --success: #27ae60;
+  --danger: #f46;
+  --max-width: 1300px;
+  --large-width: 1440px;
+  --mega-width: 2400px;
+  --header-height: 80px;
+  --ease: cubic-bezier(0.4, 0, 0.2, 1);
+  --slow-ease: cubic-bezier(0.5, 0.5, 0.5, 1);
+  --declerate-ease: cubic-bezier(0, 0, 0.2, 1);
+  --accelerate-ease: cubic-bezier(0.8, 0, 0.8, 1);
+  --bounce-ease: cubic-bezier(0.4, 0, 0.2, 1.4);
+}
+
+html,
+body {
+  max-width: 2048px;
+  padding: 0;
+  margin: 0;
+  font-family: "Source Sans Pro", "Oswald", sans-serif;
+}
+
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: rgb(var(--primary));
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+button {
+  border: none;
+  outline: none;
+  background: none;
+}
