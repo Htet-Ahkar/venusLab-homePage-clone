@@ -1,6 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 // Constants
 import { pages } from "../../constants/index";
@@ -11,16 +11,40 @@ import { MobileMenu } from "..";
 
 const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [offsetY, setOffsetY] = useState(0);
+  const [isScroll, setIsScroll] = useState(false);
+
+  useEffect(() => {
+    window.onscroll = () => {
+      setOffsetY(window.scrollY);
+    };
+  }, []);
+
+  useEffect(() => {
+    offsetY > 0 ? setIsScroll(true) : setIsScroll(false);
+
+    return () => {};
+  }, [offsetY]);
+
+  // Lock Scroll (Not really necessary tough)
+  useEffect(() => {
+    isMenuOpen
+      ? (document.body.style.overflow = "hidden")
+      : (document.body.style.overflow = "scroll");
+
+    return () => {};
+  }, [isMenuOpen]);
 
   return (
     <header
-      className="w-full fixed top-0 left-0 flex align-middle justify-center h-20 text-stone-200 z-20
-  
+      className="w-full fixed top-0 left-0 flex align-middle justify-center min-h-[80px] text-stone-200 z-20
     "
     >
       <div
-        className="w-full h-full px-4 flex justify-between align-middle bg-navbarBg
-      md:px-5"
+        className={`w-full px-4 flex gap-10 justify-between align-middle bg-navbarBg transition-all duration-500
+      md:px-5
+      ${isScroll ? "" : "lg:pt-10 lg:pb-5 lg:px-10"}
+      `}
       >
         {/* Logo Container */}
         <div className="w-full h-full flex items-center relative">
@@ -48,15 +72,17 @@ const Navbar = () => {
         >
           <ul
             className="h-full flex gap-11 justify-center items-center uppercase leading-4 text-sm
-          lg:text-lg"
+            menu:text-lg"
           >
             {pages.map((page) => (
               <li
                 key={page.name}
                 className="flex flex-col items-center
-              after:content-[''] after:block after:w-0 after:h-[1px] after:bg-slate-50 rounded-3xl
+              after:content-[''] after:block after:w-0 after:h-[1px] after:bg-slate-50 rounded-3xl text-sm
               after:transition-all after:duration-500
-              hover:after:w-11/12"
+              hover:after:w-11/12
+              lg:text-base
+              "
               >
                 <Link href={page.url}>{page.name}</Link>
               </li>

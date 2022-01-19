@@ -1,13 +1,14 @@
 // Components
 import Grid from "./Grid/index";
+import { PrimaryButton } from "../../Buttons/index";
 
 const index = () => {
   return (
     <section
-      className="w-full flex flex-col items-center px-3 bg-services bg-cover bg-inherit bg-no-repeat text-white mt-[-15%] pt-[55%] -z-20
+      className="w-full flex flex-col items-center px-3 bg-services bg-cover bg-center bg-no-repeat text-white mt-[-15%] pt-[55%] -z-20
       sm:pt-[30%]
       md:pt-[25%]
-      lg:bg-center  lg:pt-[20%]
+      lg:pt-[20%]
     "
     >
       {/* Headings */}
@@ -39,6 +40,9 @@ const index = () => {
         </p>
       </div>
       {/* Button */}
+      <div className="py-10 mb-5">
+        <PrimaryButton>request a quote</PrimaryButton>
+      </div>
     </section>
   );
 };

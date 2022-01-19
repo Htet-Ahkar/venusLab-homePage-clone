@@ -22,7 +22,9 @@ const Home: NextPage = () => {
   return (
     <>
       <main
-        className={`flex flex-col items-center justify-start min-h-screen relative`}
+        className={`flex flex-col items-center justify-start min-h-screen relative
+        ${!loading && "z-10"}
+        `}
       >
         {/* Loading */}
         {loading && <Loading isLoaded={isLoaded} setIsLoaded={setIsLoaded} />}

@@ -13,7 +13,7 @@ const Loading = ({ isLoaded, setIsLoaded }: loadingProps) => {
   useEffect(() => {
     let interval = setInterval(() => {
       setPercentage(percentage + 1);
-    }, 20);
+    }, 30);
     document.body.style.overflow = "hidden";
 
     if (percentage > 99) {
@@ -23,7 +23,7 @@ const Loading = ({ isLoaded, setIsLoaded }: loadingProps) => {
     }
 
     return () => clearInterval(interval);
-  }, [percentage]);
+  }, [percentage, setIsLoaded]);
 
   return (
     <div
