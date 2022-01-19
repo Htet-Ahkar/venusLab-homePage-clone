@@ -11,9 +11,7 @@ const Loading = ({ isLoaded, setIsLoaded }: loadingProps) => {
   // document.body.style.overflow = "hidden";
 
   useEffect(() => {
-    let interval: NodeJS.Timer | null = null;
-
-    interval = setInterval(() => {
+    let interval = setInterval(() => {
       setPercentage(percentage + 1);
     }, 20);
     document.body.style.overflow = "hidden";
