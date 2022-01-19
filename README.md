@@ -1,3 +1,11 @@
+# Desktop
+
+![Desktop](https://user-images.githubusercontent.com/79957627/150046648-68d0e1d6-d9be-4763-bbf6-006a1f99f770.png)
+
+# Mobile
+
+![Mobile](https://user-images.githubusercontent.com/79957627/150046669-b693a421-67b2-4329-ac6c-91ed46ccc18f.png)
+
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
 ## Getting Started
